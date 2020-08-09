@@ -31,15 +31,15 @@ struct Speed {
 
 struct TrackData {
     let waypoints: [Data]
-    let decodedWaypoints: [CLLocation]
-    let totalDistanceCalc: CLLocationDistance
-    let totalDurationCalc: DateInterval
-    let averageSpeed: Speed
-    let maxSpeed: Speed
-    let mapRegion: MKCoordinateRegion
-    let trackPolyline: MKPolyline
-    var speedColoredWaypoints: [UIColor]
-    var polylineLocations: [CGFloat]
+    let decodedWaypoints: [[CLLocation]]
+    var totalDistanceCalc: [CLLocationDistance]
+    var totalDurationCalc: [DateInterval]
+    var averageSpeed: [Speed]
+    var maxSpeed: [Speed]
+    var mapRegion: [MKCoordinateRegion]
+    var trackPolyline: [MKPolyline]
+    var speedColoredWaypoints: [[UIColor]]
+    var polylineLocations: [[CGFloat]]
 
     
     init(fileName: String, fileExtension: String) {
@@ -50,47 +50,45 @@ struct TrackData {
     init(data: Data) {
         self.waypoints = SBPDataToWaypoints(fileData: data)
         self.decodedWaypoints = decodeWaypoints(waypoints: self.waypoints)
-        self.totalDistanceCalc = totalDistance(waypoints: self.decodedWaypoints)
-        self.totalDurationCalc = totalDuration(waypoints: self.decodedWaypoints)
-        self.averageSpeed = Speed(speedMS: (totalDistanceCalc / totalDurationCalc.duration))
-        self.maxSpeed = Speed(speedMS: maxSpeedInstant(waypoints: self.decodedWaypoints))
-        self.mapRegion = trackMapRegion(waypoints: self.decodedWaypoints)
-        self.trackPolyline = MKPolyline(coordinates: decodedWaypoints.map({$0.coordinate}), count: decodedWaypoints.count)
         
-        self.speedColoredWaypoints = [UIColor]()
-        self.polylineLocations = [CGFloat]()
+        self.totalDistanceCalc = [CLLocationDistance]()
+        self.totalDurationCalc = [DateInterval]()
+        self.averageSpeed = [Speed]()
+        self.maxSpeed = [Speed]()
+        self.mapRegion = [MKCoordinateRegion]()
+        self.trackPolyline = [MKPolyline]()
+        self.speedColoredWaypoints = [[UIColor]]()
+        self.polylineLocations = [[CGFloat]]()
         
-        for i in 0..<self.decodedWaypoints.count {
-            let wp = self.decodedWaypoints[i]
-            let color = UIColor(red: CGFloat(wp.speed / self.maxSpeed.speedMS), green: CGFloat(1 - wp.speed / self.maxSpeed.speedMS), blue: 0.0, alpha: 1.0)
-            self.speedColoredWaypoints.append(color)
-             
-            self.polylineLocations.append(self.trackPolyline.location(atPointIndex: i))
+        
+        for wps in self.decodedWaypoints {
+            let distance = totalDistance(waypoints: wps)
+            let duration = totalDuration(waypoints: wps)
+            let avgSpeed = Speed(speedMS: (distance / duration.duration))
+            let maxSpeed = Speed(speedMS: maxSpeedInstant(waypoints: wps))
+            let mapRegion = trackMapRegion(waypoints: wps)
+            let trackPolyline = MKPolyline(coordinates: wps.map({$0.coordinate}), count: wps.count)
+            
+            var speedColoredWps = [UIColor]()
+            var polylineLocations = [CGFloat]()
+            
+            for i in 0..<wps.count {
+                let wp = wps[i]
+                let color = UIColor(red: CGFloat(wp.speed / maxSpeed.speedMS), green: CGFloat(1 - wp.speed / maxSpeed.speedMS), blue: 0.0, alpha: 1.0)
+                speedColoredWps.append(color)
+                 
+                polylineLocations.append(trackPolyline.location(atPointIndex: i))
+            }
+
+            self.totalDistanceCalc.append(distance)
+            self.totalDurationCalc.append(duration)
+            self.averageSpeed.append(avgSpeed)
+            self.maxSpeed.append(maxSpeed)
+            self.mapRegion.append(mapRegion)
+            self.trackPolyline.append(trackPolyline)
+            self.speedColoredWaypoints.append(speedColoredWps)
+            self.polylineLocations.append(polylineLocations)
+            
         }
-        print(self.totalDistanceCalc)
     }
 }
-
-//let fileData = openFile(fileName: "20200703_Monteynard", fileExtension: "SBP")
-//
-//let waypointsData = SBPDataToWaypoints(fileData: fileData)
-//
-//let decodedWaypoints = decodeWaypoints(waypoints: waypointsData)
-//
-//let df = DateFormatter()
-//df.dateFormat = "y-MM-dd H:m:ss.SSSS"
-//
-//for i in 100...400 {
-//    print(df.string(from: decodedWaypoints[i].timestamp), "lat:", decodedWaypoints[i].coordinate.latitude, "lon:", decodedWaypoints[i].coordinate.longitude, "alt:", decodedWaypoints[i].altitude, "speed:", decodedWaypoints[i].speed*3.6)
-//}
-//
-//let totalDistanceCalc = totalDistance(waypoints: decodedWaypoints)
-//let totalDurationCalc = totalDuration(waypoints: decodedWaypoints)
-//
-//formatReadableDuration(duration: totalDurationCalc)
-//
-//let averageSpeed = totalDistanceCalc / totalDurationCalc.duration
-//let averageSpeedKPH = averageSpeed * 3.6
-//maxSpeedInstant(waypoints: decodedWaypoints)*3.6
-//
-//decodedWaypoints.count

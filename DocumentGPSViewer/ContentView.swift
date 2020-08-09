@@ -11,12 +11,20 @@ struct ContentView: View {
     @Binding var document: DocumentGPSViewerDocument
 
     var body: some View {
-        TrackSummaryView(trackData: document.trackData!)
+        NavigationView {
+            List() {
+                ForEach(0..<document.trackData!.mapRegion.count) { i in
+                    NavigationLink(
+                        destination: TrackSummaryView(trackData: document.trackData!, trackIndex: i),
+                        label: {
+                            TrackIntervalRowView(trackData: document.trackData!, trackIndex: i)
+                        })
+                        .navigationTitle("Split tracks")
+                }
+            }
+            .listStyle(SidebarListStyle())
+        }
+        .navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(document: .constant(DocumentGPSViewerDocument()))
-    }
-}

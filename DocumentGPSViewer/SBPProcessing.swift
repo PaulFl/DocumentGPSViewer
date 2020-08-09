@@ -20,7 +20,7 @@ public func decodeSBPDateTime(UTCDateTimeData: Data, UTCNanoSecData: Data) -> Da
     
     let decodedNanoSec = Int16(littleEndian: UTCNanoSecData.withUnsafeBytes { $0.load(as: Int16.self) })
     decodedDate.nanosecond = Int(decodedNanoSec)
-
+    
     let decodedSec = bytesArray[0] & 0x3F
     decodedDate.second = decodedSec
     
@@ -45,7 +45,7 @@ public func decodeSBPDateTime(UTCDateTimeData: Data, UTCNanoSecData: Data) -> Da
 public func openFile(fileName: String, fileExtension: String) -> Data? {
     let filePath = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
     var fileData: Data? = nil
-
+    
     if filePath != nil {
         do {
             fileData = try Data(contentsOf: filePath!)
@@ -60,8 +60,8 @@ public func SBPDataToWaypoints(fileData: Data?) -> [Data] {
     var waypoints = [Data]()
     
     if fileData != nil {
-//        let headerRange = fileData!.startIndex..<(fileData?.index(fileData!.startIndex, offsetBy: 64))!
-//        let header = fileData!.subdata(in: headerRange)
+        //        let headerRange = fileData!.startIndex..<(fileData?.index(fileData!.startIndex, offsetBy: 64))!
+        //        let header = fileData!.subdata(in: headerRange)
         
         var index = fileData!.index(fileData!.startIndex, offsetBy: 64)
         var endIndex = fileData!.index(index, offsetBy: 32)
@@ -76,20 +76,20 @@ public func SBPDataToWaypoints(fileData: Data?) -> [Data] {
     return waypoints
 }
 
-public func decodeWaypoints(waypoints: [Data]) -> [CLLocation] {
-    var decodedWaypoints = [CLLocation]()
+public func decodeWaypoints(waypoints: [Data]) -> [[CLLocation]] {
+    var decodedWaypoints = [[CLLocation]]()
     for wp in waypoints {
-//        let HDOPBytes = wp.subdata(in: wp.startIndex..<wp.index(wp.startIndex, offsetBy: 1))
-//        let SVsBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 1)..<wp.index(wp.startIndex, offsetBy: 2))
+        //        let HDOPBytes = wp.subdata(in: wp.startIndex..<wp.index(wp.startIndex, offsetBy: 1))
+        //        let SVsBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 1)..<wp.index(wp.startIndex, offsetBy: 2))
         let UTCSecBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 2)..<wp.index(wp.startIndex, offsetBy: 4))
         let dateTimeUTCBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 4)..<wp.index(wp.startIndex, offsetBy: 8))
-//        let SVIDListBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 8)..<wp.index(wp.startIndex, offsetBy: 12))
+        //        let SVIDListBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 8)..<wp.index(wp.startIndex, offsetBy: 12))
         let latBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 12)..<wp.index(wp.startIndex, offsetBy: 16))
         let lonBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 16)..<wp.index(wp.startIndex, offsetBy: 20))
         let altBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 20)..<wp.index(wp.startIndex, offsetBy: 24))
         let speedBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 24)..<wp.index(wp.startIndex, offsetBy: 26))
         let headingBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 26)..<wp.index(wp.startIndex, offsetBy: 28))
- //       let varioBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 28)..<wp.index(wp.startIndex, offsetBy: 30))
+        //       let varioBytes = wp.subdata(in: wp.index(wp.startIndex, offsetBy: 28)..<wp.index(wp.startIndex, offsetBy: 30))
         
         let latitude = Double(Int32(littleEndian: latBytes.withUnsafeBytes { $0.load(as: Int32.self) })) / 1e7
         let longitude = Double(Int32(littleEndian: lonBytes.withUnsafeBytes { $0.load(as: Int32.self) })) / 1e7
@@ -97,7 +97,7 @@ public func decodeWaypoints(waypoints: [Data]) -> [CLLocation] {
         let altitude = CLLocationDistance((Int32(littleEndian: altBytes.withUnsafeBytes { $0.load(as: Int32.self) })) / 100)
         let speed = CLLocationSpeed((Int16(littleEndian: speedBytes.withUnsafeBytes { $0.load(as: Int16.self) })) / 100)
         let heading = CLLocationDirection(Int16(littleEndian: headingBytes.withUnsafeBytes { $0.load(as: Int16.self) }))
- //       let vario = CLLocationSpeed((Int16(littleEndian: varioBytes.withUnsafeBytes { $0.load(as: Int16.self) })) / 100)
+        //       let vario = CLLocationSpeed((Int16(littleEndian: varioBytes.withUnsafeBytes { $0.load(as: Int16.self) })) / 100)
         
         
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -107,8 +107,15 @@ public func decodeWaypoints(waypoints: [Data]) -> [CLLocation] {
         let location = CLLocation(coordinate: coordinates, altitude: altitude, horizontalAccuracy: CLLocationAccuracy(), verticalAccuracy: CLLocationAccuracy(), course: heading, courseAccuracy: CLLocationDirectionAccuracy(), speed: speed, speedAccuracy: CLLocationSpeedAccuracy(), timestamp: dateTime!)
         
         
-        
-        decodedWaypoints.append(location)
+        if decodedWaypoints.count == 0 {
+            decodedWaypoints.append([location])
+        } else {
+            if location.distance(from: decodedWaypoints.last!.last!) > CLLocationDistance(4000) {
+                decodedWaypoints.append([location])
+            } else {
+                decodedWaypoints[decodedWaypoints.count-1].append(location)
+            }
+        }
     }
     
     return decodedWaypoints

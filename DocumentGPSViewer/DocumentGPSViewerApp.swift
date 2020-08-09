@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct DocumentGPSViewerApp: App {
+    @State private var selectedTrack: Int?
+    
     var body: some Scene {
         DocumentGroup(newDocument: DocumentGPSViewerDocument()) { file in
             ContentView(document: file.$document)

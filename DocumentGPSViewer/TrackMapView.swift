@@ -10,6 +10,7 @@ import MapKit
 
 struct TrackMapView: View {
     let trackData: TrackData
+    
     @State var mapRegion = MKCoordinateRegion()
     
     init(trackData: TrackData) {
@@ -23,7 +24,7 @@ struct TrackMapView: View {
     var body: some View {
         Map(coordinateRegion: $mapRegion, interactionModes: .all, showsUserLocation: true)
             .onAppear {
-                mapRegion = trackData.mapRegion
+                mapRegion = trackData.mapRegion.last!
             }
     }
 }

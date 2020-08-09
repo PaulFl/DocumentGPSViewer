@@ -87,3 +87,37 @@ public func trackMapRegion(waypoints: [CLLocation]) -> MKCoordinateRegion {
     
     return MKCoordinateRegion(center: center, span: span)
 }
+
+public func miniMapRegion(waypoints: [CLLocation]) -> MKCoordinateRegion {
+    if waypoints.first == nil {
+        return MKCoordinateRegion()
+    }
+    
+    let spanFactor = 300.0
+    
+    var maxLat = waypoints.first!.coordinate.latitude
+    var minLat = waypoints.first!.coordinate.latitude
+    var maxLon = waypoints.first!.coordinate.longitude
+    var minLon = waypoints.first!.coordinate.longitude
+    for wp in waypoints {
+        if wp.coordinate.latitude > maxLat {
+            maxLat = wp.coordinate.latitude
+        } else if wp.coordinate.latitude < minLat {
+            minLat = wp.coordinate.latitude
+        }
+        
+        if wp.coordinate.longitude > maxLon {
+            maxLon = wp.coordinate.longitude
+        } else if wp.coordinate.longitude < minLon {
+            minLon = wp.coordinate.longitude
+        }
+    }
+    
+    let middleLat = (minLat + maxLat) / 2
+    let middleLon = (minLon + maxLon) / 2
+    
+    let center = CLLocationCoordinate2D(latitude: middleLat, longitude: middleLon)
+    let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat)*spanFactor, longitudeDelta: (maxLon - minLon)*spanFactor)
+    
+    return MKCoordinateRegion(center: center, span: span)
+}

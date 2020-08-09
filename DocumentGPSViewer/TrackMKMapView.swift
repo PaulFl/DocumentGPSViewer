@@ -10,13 +10,14 @@ import MapKit
 
 struct TrackMKMapView: View {
     let trackData: TrackData
+    let trackIndex: Int
     @State var mapRegion = MKCoordinateRegion()
     @State var selectedMapType = MKMapType.standard
     
     var body: some View {
         VStack {
             ZStack {
-                MapView(trackData: trackData, mapType: selectedMapType)
+                MapView(trackData: trackData, trackIndex: trackIndex, mapType: selectedMapType)
             }
             Picker("Map type", selection: $selectedMapType) {
                 Text("Standard").tag(MKMapType.standard)
@@ -32,7 +33,7 @@ struct TrackMKMapView: View {
             Spacer()
             VStack {
                 Button(action: {
-                    self.mapRegion = trackData.mapRegion
+                    self.mapRegion = trackData.mapRegion[trackIndex]
                 }, label: {
                     Text("Center")
                 })
@@ -44,12 +45,13 @@ struct TrackMKMapView: View {
 
 struct TrackMKMapView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackMKMapView(trackData: TrackData(fileName: "20200703_Monteynard", fileExtension: "SBP"))
+        TrackMKMapView(trackData: TrackData(fileName: "20200703_Monteynard", fileExtension: "SBP"), trackIndex: 0)
     }
 }
 
 struct MapView: UIViewRepresentable {
     let trackData: TrackData
+    let trackIndex: Int
     let mapType: MKMapType
     
     func makeUIView(context: Context) -> MKMapView {
@@ -59,7 +61,7 @@ struct MapView: UIViewRepresentable {
         mapView.mapType = .hybrid
         mapView.isRotateEnabled = false
         mapView.isPitchEnabled = false
-        mapView.setRegion(trackData.mapRegion, animated: false)
+        mapView.setRegion(trackData.mapRegion[trackIndex], animated: false)
         return mapView
     }
     
@@ -76,7 +78,7 @@ struct MapView: UIViewRepresentable {
         view.showsUserLocation = true
         
         
-        view.addOverlay(trackData.trackPolyline)
+        view.addOverlay(trackData.trackPolyline[trackIndex])
     }
     
     func makeCoordinator() -> Coordinator {
