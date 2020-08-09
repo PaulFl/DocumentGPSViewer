@@ -14,6 +14,12 @@
 		E4A4F4D624E00F300043C0AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A4F4D524E00F300043C0AF /* Preview Assets.xcassets */; };
 		E4A4F4E124E00F300043C0AF /* DocumentGPSViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4E024E00F300043C0AF /* DocumentGPSViewerTests.swift */; };
 		E4A4F4EC24E00F300043C0AF /* DocumentGPSViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4EB24E00F300043C0AF /* DocumentGPSViewerUITests.swift */; };
+		E4A4F4FB24E012900043C0AF /* TrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4FA24E012900043C0AF /* TrackData.swift */; };
+		E4A4F4FD24E0129A0043C0AF /* SBPProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */; };
+		E4A4F4FF24E0129F0043C0AF /* TrackProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */; };
+		E4A4F50124E015190043C0AF /* TrackMKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50024E015190043C0AF /* TrackMKMapView.swift */; };
+		E4A4F50324E0151E0043C0AF /* TrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50224E0151E0043C0AF /* TrackMapView.swift */; };
+		E4A4F50524E015260043C0AF /* TrackSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50424E015260043C0AF /* TrackSummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,13 @@
 		E4A4F4E724E00F300043C0AF /* DocumentGPSViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocumentGPSViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A4F4EB24E00F300043C0AF /* DocumentGPSViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentGPSViewerUITests.swift; sourceTree = "<group>"; };
 		E4A4F4ED24E00F300043C0AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A4F4F924E00F380043C0AF /* DocumentGPSViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DocumentGPSViewer.entitlements; sourceTree = "<group>"; };
+		E4A4F4FA24E012900043C0AF /* TrackData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackData.swift; sourceTree = "<group>"; };
+		E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBPProcessing.swift; sourceTree = "<group>"; };
+		E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackProcessing.swift; sourceTree = "<group>"; };
+		E4A4F50024E015190043C0AF /* TrackMKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMKMapView.swift; sourceTree = "<group>"; };
+		E4A4F50224E0151E0043C0AF /* TrackMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMapView.swift; sourceTree = "<group>"; };
+		E4A4F50424E015260043C0AF /* TrackSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +110,16 @@
 		E4A4F4CB24E00F2C0043C0AF /* DocumentGPSViewer */ = {
 			isa = PBXGroup;
 			children = (
+				E4A4F4F924E00F380043C0AF /* DocumentGPSViewer.entitlements */,
 				E4A4F4CC24E00F2C0043C0AF /* DocumentGPSViewerApp.swift */,
 				E4A4F4CE24E00F2C0043C0AF /* DocumentGPSViewerDocument.swift */,
 				E4A4F4D024E00F2C0043C0AF /* ContentView.swift */,
+				E4A4F4FA24E012900043C0AF /* TrackData.swift */,
+				E4A4F50424E015260043C0AF /* TrackSummaryView.swift */,
+				E4A4F50024E015190043C0AF /* TrackMKMapView.swift */,
+				E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */,
+				E4A4F50224E0151E0043C0AF /* TrackMapView.swift */,
+				E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */,
 				E4A4F4D224E00F300043C0AF /* Assets.xcassets */,
 				E4A4F4D724E00F300043C0AF /* Info.plist */,
 				E4A4F4D424E00F300043C0AF /* Preview Content */,
@@ -262,7 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A4F4FF24E0129F0043C0AF /* TrackProcessing.swift in Sources */,
 				E4A4F4CF24E00F2C0043C0AF /* DocumentGPSViewerDocument.swift in Sources */,
+				E4A4F4FB24E012900043C0AF /* TrackData.swift in Sources */,
+				E4A4F50524E015260043C0AF /* TrackSummaryView.swift in Sources */,
+				E4A4F50324E0151E0043C0AF /* TrackMapView.swift in Sources */,
+				E4A4F4FD24E0129A0043C0AF /* SBPProcessing.swift in Sources */,
+				E4A4F50124E015190043C0AF /* TrackMKMapView.swift in Sources */,
 				E4A4F4CD24E00F2C0043C0AF /* DocumentGPSViewerApp.swift in Sources */,
 				E4A4F4D124E00F2C0043C0AF /* ContentView.swift in Sources */,
 			);
@@ -421,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
 				DEVELOPMENT_TEAM = FYCX934LN4;
@@ -433,8 +460,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -443,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
 				DEVELOPMENT_TEAM = FYCX934LN4;
@@ -455,8 +484,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};

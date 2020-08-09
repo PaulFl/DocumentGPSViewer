@@ -8,32 +8,26 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+
 extension UTType {
     static var exampleText: UTType {
-        UTType(importedAs: "com.example.plain-text")
+        UTType(importedAs: "com.paulfly.SBP")
     }
 }
 
 struct DocumentGPSViewerDocument: FileDocument {
-    var text: String
-
-    init(text: String = "Hello, world!") {
-        self.text = text
+    let trackData: TrackData?
+    static var readableContentTypes: [UTType] { [.data] }
+    
+    init() {
+        self.trackData = nil
     }
 
-    static var readableContentTypes: [UTType] { [.exampleText] }
-
     init(fileWrapper: FileWrapper, contentType: UTType) throws {
-        guard let data = fileWrapper.regularFileContents,
-              let string = String(data: data, encoding: .utf8)
-        else {
-            throw CocoaError(.fileReadCorruptFile)
-        }
-        text = string
+        let data = fileWrapper.regularFileContents
+        self.trackData = TrackData(data: data!)
     }
     
     func write(to fileWrapper: inout FileWrapper, contentType: UTType) throws {
-        let data = text.data(using: .utf8)!
-        fileWrapper = FileWrapper(regularFileWithContents: data)
     }
 }
