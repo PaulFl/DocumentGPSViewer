@@ -12,6 +12,7 @@ struct DetailedStatsView: View {
     let trackIndex: Int
     let start: String
     let end: String
+    var trackName: String
     
     init(trackData: TrackData, trackIndex: Int) {
         self.trackData = trackData
@@ -23,14 +24,37 @@ struct DetailedStatsView: View {
         
         self.start = dateFormatter.string(from: trackData.decodedWaypoints[trackIndex].first!.timestamp)
         self.end = dateFormatter.string(from: trackData.decodedWaypoints[trackIndex].last!.timestamp)
+        
+        self.trackName = "Track n°\(trackIndex+1)"
+        if trackData.choosenLocationName[trackIndex] != nil {
+            self.trackName += " - \(trackData.choosenLocationName[trackIndex]!)"
+        }
     }
     
     var body: some View {
         VStack(alignment: .leading) {
+            Text(self.trackName)
+                .font(.title)
+                .padding()
             MainStatsView(trackData: trackData, trackIndex: trackIndex)
                 .padding()
-            Text("Start: \(start)")
-            Text("End: \(end)")
+            VStack(alignment: .leading) {
+                HStack {
+                    Image(systemName: "play")
+                        .frame(width: 10, height: 10, alignment: .center)
+                    Text("Start: ")
+                        .fontWeight(.medium)
+                    Text(start)
+                }
+                HStack {
+                    Image(systemName: "stop")
+                        .frame(width: 10, height: 10, alignment: .center)
+                    Text("End: ")
+                        .fontWeight(.medium)
+                    Text(end)
+                }
+            }
+            .padding()
             Spacer()
             
         }

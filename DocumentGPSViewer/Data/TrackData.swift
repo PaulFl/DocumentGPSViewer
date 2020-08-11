@@ -29,21 +29,25 @@ struct Speed {
     }
 }
 
-struct TrackData {
+class TrackData {
     let waypoints: [Data]
     let decodedWaypoints: [[CLLocation]]
+    var furthestPointFromStart: [CLLocation]
+    var middlePoint: [CLLocation]
     var totalDistanceCalc: [CLLocationDistance]
     var totalDurationCalc: [DateInterval]
     var averageSpeed: [Speed]
     var maxSpeed: [Speed]
-    var maxTack: [CLLocationDistance]
+    var maxTackDistance: [CLLocationDistance]
     var mapRegion: [MKCoordinateRegion]
     var trackPolyline: [MKPolyline]
     var speedColoredWaypoints: [[UIColor]]
     var polylineLocations: [[CGFloat]]
+    var trackLocationPlacemark: [CLPlacemark?]
+    var choosenLocationName: [String?]
 
     
-    init(fileName: String, fileExtension: String) {
+    convenience init(fileName: String, fileExtension: String) {
         let data = openFile(fileName: fileName, fileExtension: fileExtension)
         self.init(data: data!)
     }
@@ -53,14 +57,18 @@ struct TrackData {
         self.decodedWaypoints = decodeWaypoints(waypoints: self.waypoints)
         
         self.totalDistanceCalc = [CLLocationDistance]()
+        self.furthestPointFromStart = [CLLocation]()
+        self.middlePoint = [CLLocation]()
         self.totalDurationCalc = [DateInterval]()
         self.averageSpeed = [Speed]()
         self.maxSpeed = [Speed]()
-        self.maxTack = [CLLocationDistance]()
+        self.maxTackDistance = [CLLocationDistance]()
         self.mapRegion = [MKCoordinateRegion]()
         self.trackPolyline = [MKPolyline]()
         self.speedColoredWaypoints = [[UIColor]]()
         self.polylineLocations = [[CGFloat]]()
+        self.trackLocationPlacemark = [CLPlacemark]()
+        self.choosenLocationName = [String?]()
         
         
         for wps in self.decodedWaypoints {
@@ -68,7 +76,8 @@ struct TrackData {
             let duration = totalDuration(waypoints: wps)
             let avgSpeed = Speed(speedMS: (distance / duration.duration))
             let maxSpeed = Speed(speedMS: maxSpeedInstant(waypoints: wps))
-            let maxTack = maxTackDistance(waypoints: wps)
+            let (maxDistanceTack, furthestPoint) = furthestPointDistanceFromStart(waypoints: wps)
+            let middlePoint = middlePointLocation(waypoint1: wps.first!, waypoint2: furthestPoint)
             let mapRegion = trackMapRegion(waypoints: wps)
             let trackPolyline = MKPolyline(coordinates: wps.map({$0.coordinate}), count: wps.count)
             
@@ -82,17 +91,45 @@ struct TrackData {
                  
                 polylineLocations.append(trackPolyline.location(atPointIndex: i))
             }
+            
+            self.trackLocationPlacemark.append(nil)
+            self.choosenLocationName.append(nil)
+            
+            let geocoder = CLGeocoder()
+            let locationIndex = trackLocationPlacemark.count-1
+            geocoder.reverseGeocodeLocation(middlePoint, completionHandler: {(placemarks, error) in
+                if error == nil {
+                    self.savePlacemark(placemark: placemarks?.first, trackIndex: locationIndex)
+                }
+            })
 
             self.totalDistanceCalc.append(distance)
             self.totalDurationCalc.append(duration)
             self.averageSpeed.append(avgSpeed)
             self.maxSpeed.append(maxSpeed)
-            self.maxTack.append(maxTack)
+            self.maxTackDistance.append(maxDistanceTack)
+            self.furthestPointFromStart.append(furthestPoint)
+            self.middlePoint.append(middlePoint)
             self.mapRegion.append(mapRegion)
             self.trackPolyline.append(trackPolyline)
             self.speedColoredWaypoints.append(speedColoredWps)
             self.polylineLocations.append(polylineLocations)
             
+        }
+    }
+    
+    func savePlacemark(placemark: CLPlacemark?, trackIndex: Int) {
+        self.trackLocationPlacemark[trackIndex] = placemark
+        if placemark != nil {
+            if placemark!.inlandWater != nil {
+                self.choosenLocationName[trackIndex] = placemark!.inlandWater
+            } else if placemark!.areasOfInterest?.first != nil {
+                self.choosenLocationName[trackIndex] = placemark!.areasOfInterest!.first
+            } else if placemark!.locality != nil {
+                self.choosenLocationName[trackIndex] = placemark!.locality
+            } else if placemark!.ocean != nil {
+                self.choosenLocationName[trackIndex] = placemark!.ocean
+            }
         }
     }
 }

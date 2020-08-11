@@ -19,7 +19,7 @@ struct ContentView: View {
                         label: {
                             TrackIntervalRowView(trackData: document.trackData!, trackIndex: i)
                         })
-                        .navigationTitle("Split tracks")
+                        .navigationTitle("Tracks")
                 }
             }
             .listStyle(SidebarListStyle())

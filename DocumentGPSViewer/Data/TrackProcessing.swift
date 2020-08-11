@@ -54,22 +54,24 @@ public func totalDistance(waypoints: [CLLocation]) -> CLLocationDistance {
     return distance
 }
 
-public func maxTackDistance(waypoints: [CLLocation]) -> CLLocationDistance {
+public func furthestPointDistanceFromStart(waypoints: [CLLocation]) -> (distance: CLLocationDistance, point: CLLocation) {
     var maxTack = CLLocationDistance()
+    var furthestPoint = CLLocation()
     
     let startWp = waypoints.first
     if startWp == nil {
-        return maxTack
+        return (maxTack, furthestPoint)
     }
     
     for wp in waypoints {
         let dist = startWp!.distance(from: wp)
         if dist > maxTack {
             maxTack = dist
+            furthestPoint = wp
         }
     }
     
-    return maxTack
+    return (maxTack, furthestPoint)
 }
 
 public func trackMapRegion(waypoints: [CLLocation]) -> MKCoordinateRegion {
@@ -138,4 +140,11 @@ public func miniMapRegion(waypoints: [CLLocation]) -> MKCoordinateRegion {
     let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat)*spanFactor, longitudeDelta: (maxLon - minLon)*spanFactor)
     
     return MKCoordinateRegion(center: center, span: span)
+}
+
+public func middlePointLocation(waypoint1: CLLocation, waypoint2: CLLocation) -> CLLocation {
+    let latMiddle = (waypoint1.coordinate.latitude + waypoint2.coordinate.latitude) / 2.0
+    let lonMiddle = (waypoint1.coordinate.longitude + waypoint2.coordinate.longitude) / 2.0
+    
+    return CLLocation(latitude: latMiddle, longitude: lonMiddle)
 }

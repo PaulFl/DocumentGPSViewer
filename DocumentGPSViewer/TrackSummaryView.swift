@@ -15,6 +15,17 @@ struct TrackSummaryView: View {
     #endif
     let trackData: TrackData
     let trackIndex: Int
+    var trackName: String
+    
+    init(trackData: TrackData, trackIndex: Int) {
+        self.trackData = trackData
+        self.trackIndex = trackIndex
+        
+        self.trackName = "T.\(trackIndex+1)"
+        if trackData.choosenLocationName[trackIndex] != nil {
+            self.trackName += " - \(trackData.choosenLocationName[trackIndex]!)"
+        }
+    }
     
     
     var body: some View {
@@ -38,21 +49,18 @@ struct TrackSummaryView: View {
                 map
                     .frame(minWidth: 200, maxWidth: 400, minHeight: 350, maxHeight: 900)
             }
-            .navigationBarTitle("Track n°\(trackIndex+1)", displayMode: .inline)
+            .navigationBarTitle(self.trackName, displayMode: .inline)
         } else {
             HStack {
                 VStack {
-                    NavigationLink(destination: DetailedStatsView(trackData: trackData, trackIndex: trackIndex)){
-                        stats
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .padding()
+                    DetailedStatsView(trackData: trackData, trackIndex: trackIndex)
                     Spacer()
                 }
                 map
                     .frame(minWidth: 410, maxWidth: 900, minHeight: 500, maxHeight: 2000)
                     .ignoresSafeArea(edges: .trailing)
             }
+            .navigationBarTitle(self.trackName, displayMode: .inline)
         }
         #else
         HStack {
@@ -64,6 +72,7 @@ struct TrackSummaryView: View {
             map
                 .frame(minWidth: 500, maxWidth: 900, minHeight: 500, maxHeight: 2000)
         }
+        .navigationBarTitle(self.trackName, displayMode: .inline)
         #endif
     }
 }

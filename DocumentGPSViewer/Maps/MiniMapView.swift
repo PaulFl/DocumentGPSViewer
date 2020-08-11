@@ -27,7 +27,7 @@ struct MiniMapView: View {
     
     var body: some View {
         Map(coordinateRegion: $mapRegion, annotationItems: [mapPin], annotationContent: { (_) in
-            return MapMarker(coordinate: trackData.decodedWaypoints[trackIndex].first!.coordinate)
+            return MapMarker(coordinate: trackData.middlePoint[trackIndex].coordinate)
                         })
             .frame(width: 100, height: 100, alignment: .center)
             .cornerRadius(16.0)

@@ -118,22 +118,17 @@
 		E4A4F4CB24E00F2C0043C0AF /* DocumentGPSViewer */ = {
 			isa = PBXGroup;
 			children = (
+				E4A4F4D224E00F300043C0AF /* Assets.xcassets */,
+				E4A4F4D724E00F300043C0AF /* Info.plist */,
 				E4A4F4F924E00F380043C0AF /* DocumentGPSViewer.entitlements */,
 				E4A4F4CC24E00F2C0043C0AF /* DocumentGPSViewerApp.swift */,
 				E4A4F4CE24E00F2C0043C0AF /* DocumentGPSViewerDocument.swift */,
 				E4A4F4D024E00F2C0043C0AF /* ContentView.swift */,
 				E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */,
-				E499E19124E05EC0001FFE42 /* MiniMapView.swift */,
-				E4A4F4FA24E012900043C0AF /* TrackData.swift */,
 				E4A4F50424E015260043C0AF /* TrackSummaryView.swift */,
-				E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */,
-				E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */,
-				E4A4F50024E015190043C0AF /* TrackMKMapView.swift */,
-				E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */,
-				E4A4F50224E0151E0043C0AF /* TrackMapView.swift */,
-				E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */,
-				E4A4F4D224E00F300043C0AF /* Assets.xcassets */,
-				E4A4F4D724E00F300043C0AF /* Info.plist */,
+				E4F3DA6024E2DB6D008E7DC3 /* Data */,
+				E4F3DA6124E2DB86008E7DC3 /* Stats */,
+				E4F3DA6224E2DBAF008E7DC3 /* Maps */,
 				E4A4F4D424E00F300043C0AF /* Preview Content */,
 			);
 			path = DocumentGPSViewer;
@@ -163,6 +158,35 @@
 				E4A4F4ED24E00F300043C0AF /* Info.plist */,
 			);
 			path = DocumentGPSViewerUITests;
+			sourceTree = "<group>";
+		};
+		E4F3DA6024E2DB6D008E7DC3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E4A4F4FA24E012900043C0AF /* TrackData.swift */,
+				E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */,
+				E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E4F3DA6124E2DB86008E7DC3 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */,
+				E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		E4F3DA6224E2DBAF008E7DC3 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				E499E19124E05EC0001FFE42 /* MiniMapView.swift */,
+				E4A4F50024E015190043C0AF /* TrackMKMapView.swift */,
+				E4A4F50224E0151E0043C0AF /* TrackMapView.swift */,
+			);
+			path = Maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
