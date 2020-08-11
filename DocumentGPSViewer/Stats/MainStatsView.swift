@@ -33,7 +33,7 @@ struct MainStatsView: View {
             HStack {
                 Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
                     .frame(width: 10, height: 10, alignment: .center)
-                let maxTackLabel = String(format: "%.2f", trackData.maxTackDistance[trackIndex]/1000) + " km"
+                let maxTackLabel = String(format: "%.2f", trackData.maxDistanceFromStart[trackIndex]/1000) + " km"
                 Text("Max dist from start: ")
                     .fontWeight(.medium)
                 Text(maxTackLabel)

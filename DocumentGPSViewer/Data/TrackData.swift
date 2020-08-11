@@ -38,13 +38,14 @@ class TrackData {
     var totalDurationCalc: [DateInterval]
     var averageSpeed: [Speed]
     var maxSpeed: [Speed]
-    var maxTackDistance: [CLLocationDistance]
+    var maxDistanceFromStart: [CLLocationDistance]
     var mapRegion: [MKCoordinateRegion]
     var trackPolyline: [MKPolyline]
     var speedColoredWaypoints: [[UIColor]]
     var polylineLocations: [[CGFloat]]
     var trackLocationPlacemark: [CLPlacemark?]
     var choosenLocationName: [String?]
+    var maxTackDistance: [CLLocationDistance?]
 
     
     convenience init(fileName: String, fileExtension: String) {
@@ -62,13 +63,14 @@ class TrackData {
         self.totalDurationCalc = [DateInterval]()
         self.averageSpeed = [Speed]()
         self.maxSpeed = [Speed]()
-        self.maxTackDistance = [CLLocationDistance]()
+        self.maxDistanceFromStart = [CLLocationDistance]()
         self.mapRegion = [MKCoordinateRegion]()
         self.trackPolyline = [MKPolyline]()
         self.speedColoredWaypoints = [[UIColor]]()
         self.polylineLocations = [[CGFloat]]()
         self.trackLocationPlacemark = [CLPlacemark]()
         self.choosenLocationName = [String?]()
+        self.maxTackDistance = [CLLocationDistance]()
         
         
         for wps in self.decodedWaypoints {
@@ -103,11 +105,12 @@ class TrackData {
                 }
             })
 
+            self.maxTackDistance.append(nil)
             self.totalDistanceCalc.append(distance)
             self.totalDurationCalc.append(duration)
             self.averageSpeed.append(avgSpeed)
             self.maxSpeed.append(maxSpeed)
-            self.maxTackDistance.append(maxDistanceTack)
+            self.maxDistanceFromStart.append(maxDistanceTack)
             self.furthestPointFromStart.append(furthestPoint)
             self.middlePoint.append(middlePoint)
             self.mapRegion.append(mapRegion)
@@ -133,12 +136,9 @@ class TrackData {
         }
     }
     
-    func computeTacks(trackIndex: Int, progress: Double) {
-        for (index, wp1) in decodedWaypoints[trackIndex].enumerated() {
-            for wp2 in decodedWaypoints[trackIndex] {
-                let distance = wp1.distance(from: wp2)
-            }
-            //progress = index / decodedWaypoints[trackIndex].count
-        }
+    func setMaxTackDistance(trackIndex: Int, distance: CLLocationDistance) {
+        self.maxTackDistance[trackIndex] = distance
     }
+    
+    
 }
