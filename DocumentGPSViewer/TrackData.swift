@@ -36,6 +36,7 @@ struct TrackData {
     var totalDurationCalc: [DateInterval]
     var averageSpeed: [Speed]
     var maxSpeed: [Speed]
+    var maxTack: [CLLocationDistance]
     var mapRegion: [MKCoordinateRegion]
     var trackPolyline: [MKPolyline]
     var speedColoredWaypoints: [[UIColor]]
@@ -55,6 +56,7 @@ struct TrackData {
         self.totalDurationCalc = [DateInterval]()
         self.averageSpeed = [Speed]()
         self.maxSpeed = [Speed]()
+        self.maxTack = [CLLocationDistance]()
         self.mapRegion = [MKCoordinateRegion]()
         self.trackPolyline = [MKPolyline]()
         self.speedColoredWaypoints = [[UIColor]]()
@@ -66,6 +68,7 @@ struct TrackData {
             let duration = totalDuration(waypoints: wps)
             let avgSpeed = Speed(speedMS: (distance / duration.duration))
             let maxSpeed = Speed(speedMS: maxSpeedInstant(waypoints: wps))
+            let maxTack = maxTackDistance(waypoints: wps)
             let mapRegion = trackMapRegion(waypoints: wps)
             let trackPolyline = MKPolyline(coordinates: wps.map({$0.coordinate}), count: wps.count)
             
@@ -84,6 +87,7 @@ struct TrackData {
             self.totalDurationCalc.append(duration)
             self.averageSpeed.append(avgSpeed)
             self.maxSpeed.append(maxSpeed)
+            self.maxTack.append(maxTack)
             self.mapRegion.append(mapRegion)
             self.trackPolyline.append(trackPolyline)
             self.speedColoredWaypoints.append(speedColoredWps)

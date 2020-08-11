@@ -54,6 +54,24 @@ public func totalDistance(waypoints: [CLLocation]) -> CLLocationDistance {
     return distance
 }
 
+public func maxTackDistance(waypoints: [CLLocation]) -> CLLocationDistance {
+    var maxTack = CLLocationDistance()
+    
+    let startWp = waypoints.first
+    if startWp == nil {
+        return maxTack
+    }
+    
+    for wp in waypoints {
+        let dist = startWp!.distance(from: wp)
+        if dist > maxTack {
+            maxTack = dist
+        }
+    }
+    
+    return maxTack
+}
+
 public func trackMapRegion(waypoints: [CLLocation]) -> MKCoordinateRegion {
     if waypoints.first == nil {
         return MKCoordinateRegion()

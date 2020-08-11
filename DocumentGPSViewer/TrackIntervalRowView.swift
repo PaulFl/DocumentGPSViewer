@@ -32,7 +32,7 @@ struct TrackIntervalRowView: View {
                 Text("Start: \(start)")
                     .font(.subheadline)
                     .fontWeight(.ultraLight)
-                Text("Start: \(end)")
+                Text("End: \(end)")
                     .font(.subheadline)
                     .fontWeight(.ultraLight)
             }
