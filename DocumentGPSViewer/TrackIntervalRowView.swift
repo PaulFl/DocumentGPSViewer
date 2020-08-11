@@ -20,11 +20,11 @@ struct TrackIntervalRowView: View {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .short
         
         self.start = dateFormatter.string(from: trackData.decodedWaypoints[trackIndex].first!.timestamp)
         self.end = dateFormatter.string(from: trackData.decodedWaypoints[trackIndex].last!.timestamp)
-        
+                
         self.trackName = "Track n°\(trackIndex+1)"
         if trackData.choosenLocationName[trackIndex] != nil {
             self.trackName += " - \(trackData.choosenLocationName[trackIndex]!)"
@@ -35,12 +35,13 @@ struct TrackIntervalRowView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(self.trackName)
+                    .font(.headline)
                 Text("Start: \(start)")
                     .font(.subheadline)
-                    .fontWeight(.ultraLight)
+                    .fontWeight(.light)
                 Text("End: \(end)")
                     .font(.subheadline)
-                    .fontWeight(.ultraLight)
+                    .fontWeight(.light)
             }
             Spacer()
             MiniMapView(trackData: trackData, trackIndex: trackIndex)

@@ -57,10 +57,10 @@ struct TrackSummaryView: View {
                     Spacer()
                 }
                 map
-                    .frame(minWidth: 410, maxWidth: 900, minHeight: 500, maxHeight: 2000)
-                    .ignoresSafeArea(edges: .trailing)
+                    .frame(minWidth: 500, maxWidth: 900, minHeight: 500, maxHeight: 2000)
+                    .ignoresSafeArea(edges: [.trailing, .bottom])
             }
-            .navigationBarTitle(self.trackName, displayMode: .inline)
+            .navigationBarHidden(true)
         }
         #else
         HStack {

@@ -14,6 +14,8 @@ struct DetailedStatsView: View {
     let end: String
     var trackName: String
     
+    @State var progress = 0.0
+    
     init(trackData: TrackData, trackIndex: Int) {
         self.trackData = trackData
         self.trackIndex = trackIndex
@@ -56,7 +58,16 @@ struct DetailedStatsView: View {
             }
             .padding()
             Spacer()
-            
+            ProgressView(value: progress)
+                .padding()
+            HStack {
+                Spacer()
+                Button(action: {}, label: {
+                    Text("Compute tacks")
+                })
+                Spacer()
+            }
+            Spacer()
         }
         .navigationBarTitle("Stats")
     }

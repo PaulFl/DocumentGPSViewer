@@ -18,13 +18,17 @@ struct TrackMKMapView: View {
         VStack {
             ZStack {
                 MapView(trackData: trackData, trackIndex: trackIndex, mapType: selectedMapType)
+                VStack {
+                    Picker("Map type", selection: $selectedMapType) {
+                        Text("Standard").tag(MKMapType.standard)
+                        Text("Hybrid").tag(MKMapType.hybrid)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding(.all, 10)
+                    Spacer()
+                }
             }
-            Picker("Map type", selection: $selectedMapType) {
-                Text("Standard").tag(MKMapType.standard)
-                Text("Hybrid").tag(MKMapType.hybrid)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.all, 10)
+            
         }
     }
     

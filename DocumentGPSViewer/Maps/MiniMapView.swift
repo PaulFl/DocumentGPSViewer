@@ -29,8 +29,8 @@ struct MiniMapView: View {
         Map(coordinateRegion: $mapRegion, annotationItems: [mapPin], annotationContent: { (_) in
             return MapMarker(coordinate: trackData.middlePoint[trackIndex].coordinate)
                         })
-            .frame(width: 100, height: 100, alignment: .center)
-            .cornerRadius(16.0)
+            .frame(width: 85, height: 85, alignment: .center)
+            .cornerRadius(12.0)
             .onAppear(perform: {
                 mapRegion = miniMapRegion(waypoints: trackData.decodedWaypoints[trackIndex])
             })

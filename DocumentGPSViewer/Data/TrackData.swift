@@ -132,4 +132,13 @@ class TrackData {
             }
         }
     }
+    
+    func computeTacks(trackIndex: Int, progress: Double) {
+        for (index, wp1) in decodedWaypoints[trackIndex].enumerated() {
+            for wp2 in decodedWaypoints[trackIndex] {
+                let distance = wp1.distance(from: wp2)
+            }
+            //progress = index / decodedWaypoints[trackIndex].count
+        }
+    }
 }

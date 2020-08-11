@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41932A324E2EA5800EDE977 /* SpeedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41932A224E2EA5800EDE977 /* SpeedGraphView.swift */; };
 		E499E19024E0570C001FFE42 /* TrackIntervalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */; };
 		E499E19224E05EC0001FFE42 /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499E19124E05EC0001FFE42 /* MiniMapView.swift */; };
 		E4A4F4CD24E00F2C0043C0AF /* DocumentGPSViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4CC24E00F2C0043C0AF /* DocumentGPSViewerApp.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E41932A224E2EA5800EDE977 /* SpeedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGraphView.swift; sourceTree = "<group>"; };
 		E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIntervalRowView.swift; sourceTree = "<group>"; };
 		E499E19124E05EC0001FFE42 /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
 		E4A4F4C924E00F2C0043C0AF /* DocumentGPSViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentGPSViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 			children = (
 				E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */,
 				E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */,
+				E41932A224E2EA5800EDE977 /* SpeedGraphView.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				E4A4F4FB24E012900043C0AF /* TrackData.swift in Sources */,
 				E4A4F50524E015260043C0AF /* TrackSummaryView.swift in Sources */,
 				E4A4F50324E0151E0043C0AF /* TrackMapView.swift in Sources */,
+				E41932A324E2EA5800EDE977 /* SpeedGraphView.swift in Sources */,
 				E4F3DA5D24E2AF25008E7DC3 /* MainStatsView.swift in Sources */,
 				E4A4F4FD24E0129A0043C0AF /* SBPProcessing.swift in Sources */,
 				E499E19024E0570C001FFE42 /* TrackIntervalRowView.swift in Sources */,
