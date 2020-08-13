@@ -9,11 +9,11 @@ import SwiftUI
 import MapKit
 
 struct TrackMapView: View {
-    let trackData: TrackData
+    let trackData: SplitTrackData
     
     @State var mapRegion = MKCoordinateRegion()
     
-    init(trackData: TrackData) {
+    init(trackData: SplitTrackData) {
         self.trackData = trackData
        
         MKMapView.appearance().showsCompass = true
@@ -24,13 +24,7 @@ struct TrackMapView: View {
     var body: some View {
         Map(coordinateRegion: $mapRegion, interactionModes: .all, showsUserLocation: true)
             .onAppear {
-                mapRegion = trackData.mapRegion.last!
+                mapRegion = trackData.mapRegion
             }
-    }
-}
-
-struct TrackMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrackMapView(trackData: TrackData(fileName: "20200703_Monteynard", fileExtension: "SBP"))
     }
 }

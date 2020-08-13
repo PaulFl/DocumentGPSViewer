@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct TrackIntervalRowView: View {
-    let trackData: TrackData
+    let trackData: SplitTrackData
     let trackIndex: Int
     let start: String
     let end: String
     var trackName: String
     
-    init(trackData: TrackData, trackIndex: Int) {
+    init(trackData: SplitTrackData, trackIndex: Int) {
         self.trackData = trackData
         self.trackIndex = trackIndex
         
@@ -22,12 +22,12 @@ struct TrackIntervalRowView: View {
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         
-        self.start = dateFormatter.string(from: trackData.decodedWaypoints[trackIndex].first!.timestamp)
-        self.end = dateFormatter.string(from: trackData.decodedWaypoints[trackIndex].last!.timestamp)
+        self.start = dateFormatter.string(from: trackData.decodedWaypoints.first!.timestamp)
+        self.end = dateFormatter.string(from: trackData.decodedWaypoints.last!.timestamp)
                 
         self.trackName = "Track n°\(trackIndex+1)"
-        if trackData.choosenLocationName[trackIndex] != nil {
-            self.trackName += " - \(trackData.choosenLocationName[trackIndex]!)"
+        if trackData.choosenLocationName != nil {
+            self.trackName += " - \(trackData.choosenLocationName!)"
         }
     }
     
@@ -46,11 +46,5 @@ struct TrackIntervalRowView: View {
             Spacer()
             MiniMapView(trackData: trackData, trackIndex: trackIndex)
         }
-    }
-}
-
-struct TrackIntervalRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrackIntervalRowView(trackData: TrackData(fileName: "20200726_Jullouville", fileExtension: "SBP"), trackIndex: 0)
     }
 }

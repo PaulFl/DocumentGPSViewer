@@ -13,23 +13,23 @@ struct TrackSummaryView: View {
     @Environment(\.horizontalSizeClass) private var horizontalsizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     #endif
-    let trackData: TrackData
+    let trackData: SplitTrackData
     let trackIndex: Int
     var trackName: String
     
-    init(trackData: TrackData, trackIndex: Int) {
+    init(trackData: SplitTrackData, trackIndex: Int) {
         self.trackData = trackData
         self.trackIndex = trackIndex
         
         self.trackName = "T.\(trackIndex+1)"
-        if trackData.choosenLocationName[trackIndex] != nil {
-            self.trackName += " - \(trackData.choosenLocationName[trackIndex]!)"
+        if trackData.choosenLocationName != nil {
+            self.trackName += " - \(trackData.choosenLocationName!)"
         }
     }
     
     
     var body: some View {
-        let map = TrackMKMapView(trackData: trackData, trackIndex: trackIndex)
+        let map = TrackMKMapView(trackData: trackData)
         //        let map = TrackMapView(trackData: trackData)
         let stats = HStack {
             MainStatsView(trackData: trackData, trackIndex: trackIndex)
@@ -48,6 +48,7 @@ struct TrackSummaryView: View {
                 .padding()
                 map
                     .frame(minWidth: 200, maxWidth: 400, minHeight: 350, maxHeight: 900)
+                    .ignoresSafeArea(edges: .bottom)
             }
             .navigationBarTitle(self.trackName, displayMode: .inline)
         } else {
@@ -74,11 +75,5 @@ struct TrackSummaryView: View {
         }
         .navigationBarTitle(self.trackName, displayMode: .inline)
         #endif
-    }
-}
-
-struct TrackSummaryView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrackSummaryView(trackData: TrackData(fileName: "20200726_Jullouville", fileExtension: "SBP"), trackIndex: 0)
     }
 }

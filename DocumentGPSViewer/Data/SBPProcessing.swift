@@ -18,8 +18,8 @@ public func decodeSBPDateTime(UTCDateTimeData: Data, UTCNanoSecData: Data) -> Da
     var decodedDate = DateComponents()
     decodedDate.timeZone = TimeZone(abbreviation: "UTC")
     
-    let decodedNanoSec = Int16(littleEndian: UTCNanoSecData.withUnsafeBytes { $0.load(as: Int16.self) })
-    decodedDate.nanosecond = Int(decodedNanoSec)
+    let decodedNanoSec = UInt16(littleEndian: UTCNanoSecData.withUnsafeBytes { $0.load(as: UInt16.self) })
+    decodedDate.nanosecond = Int(Int(decodedNanoSec) % 1000) * Int(1e6)
     
     let decodedSec = bytesArray[0] & 0x3F
     decodedDate.second = decodedSec
@@ -37,9 +37,11 @@ public func decodeSBPDateTime(UTCDateTimeData: Data, UTCNanoSecData: Data) -> Da
     decodedDate.month = decodedMonthYear % 12
     
     decodedDate.year = 2000 + decodedMonthYear / 12
+
     
     let calendar = Calendar.current
-    return calendar.date(from: decodedDate)
+    let date = calendar.date(from: decodedDate)
+    return date
 }
 
 public func openFile(fileName: String, fileExtension: String) -> Data? {
@@ -95,8 +97,8 @@ public func decodeWaypoints(waypoints: [Data]) -> [[CLLocation]] {
         let longitude = Double(Int32(littleEndian: lonBytes.withUnsafeBytes { $0.load(as: Int32.self) })) / 1e7
         
         let altitude = CLLocationDistance((Int32(littleEndian: altBytes.withUnsafeBytes { $0.load(as: Int32.self) })) / 100)
-        let speed = CLLocationSpeed((Int16(littleEndian: speedBytes.withUnsafeBytes { $0.load(as: Int16.self) })) / 100)
-        let heading = CLLocationDirection(Int16(littleEndian: headingBytes.withUnsafeBytes { $0.load(as: Int16.self) }))
+        let speed = CLLocationSpeed((UInt16(littleEndian: speedBytes.withUnsafeBytes { $0.load(as: UInt16.self) })) / 100)
+        let heading = CLLocationDirection(UInt16(littleEndian: headingBytes.withUnsafeBytes { $0.load(as: UInt16.self) }))
         //       let vario = CLLocationSpeed((Int16(littleEndian: varioBytes.withUnsafeBytes { $0.load(as: Int16.self) })) / 100)
         
         

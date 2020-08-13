@@ -14,25 +14,23 @@ struct MapPin: Identifiable {
 }
 
 struct MiniMapView: View {
-    let trackData: TrackData
-    let trackIndex: Int
+    let trackData: SplitTrackData
     @State var mapRegion = MKCoordinateRegion()
     let mapPin: MapPin
     
-    init(trackData: TrackData, trackIndex: Int) {
-        self.trackIndex = trackIndex
+    init(trackData: SplitTrackData, trackIndex: Int) {
         self.trackData = trackData
-        self.mapPin = MapPin(location: trackData.decodedWaypoints[trackIndex].first!.coordinate)
+        self.mapPin = MapPin(location: trackData.middlePoint.coordinate)
     }
     
     var body: some View {
         Map(coordinateRegion: $mapRegion, annotationItems: [mapPin], annotationContent: { (_) in
-            return MapMarker(coordinate: trackData.middlePoint[trackIndex].coordinate)
+            return MapMarker(coordinate: trackData.middlePoint.coordinate)
                         })
             .frame(width: 85, height: 85, alignment: .center)
             .cornerRadius(12.0)
             .onAppear(perform: {
-                mapRegion = miniMapRegion(waypoints: trackData.decodedWaypoints[trackIndex])
+                mapRegion = miniMapRegion(waypoints: trackData.decodedWaypoints)
             })
     }
 }

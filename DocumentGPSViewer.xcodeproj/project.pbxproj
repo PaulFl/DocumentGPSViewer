@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E41932A324E2EA5800EDE977 /* SpeedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41932A224E2EA5800EDE977 /* SpeedGraphView.swift */; };
+		E46C8D3224E45D910005398B /* SplitTrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C8D3124E45D910005398B /* SplitTrackData.swift */; };
+		E46C8D3424E5598A0005398B /* SingleSegmentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C8D3324E5598A0005398B /* SingleSegmentSummaryView.swift */; };
+		E46C8D3824E55B830005398B /* SpeedsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C8D3724E55B830005398B /* SpeedsSummaryView.swift */; };
+		E46C8D3A24E55C320005398B /* DistanceSegmentsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C8D3924E55C320005398B /* DistanceSegmentsSummaryView.swift */; };
 		E499E19024E0570C001FFE42 /* TrackIntervalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */; };
 		E499E19224E05EC0001FFE42 /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499E19124E05EC0001FFE42 /* MiniMapView.swift */; };
 		E4A4F4CD24E00F2C0043C0AF /* DocumentGPSViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4CC24E00F2C0043C0AF /* DocumentGPSViewerApp.swift */; };
@@ -46,6 +50,10 @@
 
 /* Begin PBXFileReference section */
 		E41932A224E2EA5800EDE977 /* SpeedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGraphView.swift; sourceTree = "<group>"; };
+		E46C8D3124E45D910005398B /* SplitTrackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTrackData.swift; sourceTree = "<group>"; };
+		E46C8D3324E5598A0005398B /* SingleSegmentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSegmentSummaryView.swift; sourceTree = "<group>"; };
+		E46C8D3724E55B830005398B /* SpeedsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedsSummaryView.swift; sourceTree = "<group>"; };
+		E46C8D3924E55C320005398B /* DistanceSegmentsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSegmentsSummaryView.swift; sourceTree = "<group>"; };
 		E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIntervalRowView.swift; sourceTree = "<group>"; };
 		E499E19124E05EC0001FFE42 /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
 		E4A4F4C924E00F2C0043C0AF /* DocumentGPSViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentGPSViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A4F4FA24E012900043C0AF /* TrackData.swift */,
+				E46C8D3124E45D910005398B /* SplitTrackData.swift */,
 				E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */,
 				E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */,
 			);
@@ -178,6 +187,9 @@
 				E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */,
 				E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */,
 				E41932A224E2EA5800EDE977 /* SpeedGraphView.swift */,
+				E46C8D3324E5598A0005398B /* SingleSegmentSummaryView.swift */,
+				E46C8D3724E55B830005398B /* SpeedsSummaryView.swift */,
+				E46C8D3924E55C320005398B /* DistanceSegmentsSummaryView.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -322,11 +334,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A4F4FF24E0129F0043C0AF /* TrackProcessing.swift in Sources */,
+				E46C8D3824E55B830005398B /* SpeedsSummaryView.swift in Sources */,
+				E46C8D3224E45D910005398B /* SplitTrackData.swift in Sources */,
 				E4A4F4CF24E00F2C0043C0AF /* DocumentGPSViewerDocument.swift in Sources */,
 				E4A4F4FB24E012900043C0AF /* TrackData.swift in Sources */,
 				E4A4F50524E015260043C0AF /* TrackSummaryView.swift in Sources */,
+				E46C8D3A24E55C320005398B /* DistanceSegmentsSummaryView.swift in Sources */,
 				E4A4F50324E0151E0043C0AF /* TrackMapView.swift in Sources */,
 				E41932A324E2EA5800EDE977 /* SpeedGraphView.swift in Sources */,
+				E46C8D3424E5598A0005398B /* SingleSegmentSummaryView.swift in Sources */,
 				E4F3DA5D24E2AF25008E7DC3 /* MainStatsView.swift in Sources */,
 				E4A4F4FD24E0129A0043C0AF /* SBPProcessing.swift in Sources */,
 				E499E19024E0570C001FFE42 /* TrackIntervalRowView.swift in Sources */,
