@@ -13,10 +13,15 @@ struct TrackIntervalRowView: View {
     let start: String
     let end: String
     var trackName: String
+    var trackSummary: String
     
     init(trackData: SplitTrackData, trackIndex: Int) {
         self.trackData = trackData
         self.trackIndex = trackIndex
+        
+        self.trackSummary = String(format: "%.2f", trackData.totalDistanceCalc/1000.0)
+        self.trackSummary += " km - "
+        self.trackSummary += formatReadableDuration(duration: trackData.totalDurationCalc)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -36,12 +41,17 @@ struct TrackIntervalRowView: View {
             VStack(alignment: .leading) {
                 Text(self.trackName)
                     .font(.headline)
-                Text("Start: \(start)")
-                    .font(.subheadline)
-                    .fontWeight(.light)
-                Text("End: \(end)")
-                    .font(.subheadline)
-                    .fontWeight(.light)
+                VStack(alignment: .leading) {
+                    Text(self.trackSummary)
+                        .font(.subheadline)
+                    Text("Start: \(start)")
+                        .font(.subheadline)
+                        .fontWeight(.light)
+                    Text("End: \(end)")
+                        .font(.subheadline)
+                        .fontWeight(.light)
+                }
+                .padding(.leading, 10)
             }
             Spacer()
             MiniMapView(trackData: trackData, trackIndex: trackIndex)

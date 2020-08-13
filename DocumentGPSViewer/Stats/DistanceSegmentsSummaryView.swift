@@ -26,6 +26,7 @@ struct DistanceSegmentsSummaryView: View {
                 }
             }
         }
-        .padding([.leading, .top], 10)
+        .padding([.leading], 10)
+        .padding(.top, 2)
     }
 }

@@ -113,7 +113,7 @@ public func miniMapRegion(waypoints: [CLLocation]) -> MKCoordinateRegion {
         return MKCoordinateRegion()
     }
     
-    let spanFactor = 300.0
+    let spanFactor = 8.0
     
     var maxLat = waypoints.first!.coordinate.latitude
     var minLat = waypoints.first!.coordinate.latitude
@@ -137,7 +137,7 @@ public func miniMapRegion(waypoints: [CLLocation]) -> MKCoordinateRegion {
     let middleLon = (minLon + maxLon) / 2
     
     let center = CLLocationCoordinate2D(latitude: middleLat, longitude: middleLon)
-    let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat)*spanFactor, longitudeDelta: (maxLon - minLon)*spanFactor)
+    let span = MKCoordinateSpan(latitudeDelta: spanFactor, longitudeDelta: spanFactor)
     
     return MKCoordinateRegion(center: center, span: span)
 }
