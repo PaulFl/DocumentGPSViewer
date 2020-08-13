@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct SpeedsSummaryView: View {
     let topSegments: (meters50: [TrackSegment]?, meters100: [TrackSegment]?, meters200: [TrackSegment]?, meters500: [TrackSegment]?)

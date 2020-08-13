@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct DistanceSegmentsSummaryView: View {
     let segments: [TrackSegment]
