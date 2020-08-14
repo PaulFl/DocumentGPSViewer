@@ -1,4 +1,4 @@
-#  SPB File protocol
+#  SPB File protocol (credits: gpsbabel)
 
 ## Waypoint structure
 
