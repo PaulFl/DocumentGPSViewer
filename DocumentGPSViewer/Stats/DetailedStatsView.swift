@@ -110,7 +110,7 @@ struct DetailedStatsView: View {
                 MainStatsView(trackData: trackData, trackIndex: trackIndex)
                     .padding()
                 timeInfo
-                    .padding()
+                    .padding([.leading, .trailing])
                 SpeedsSummaryView(topSegments: trackData.topSegments)
                     .padding()
                 Spacer()
