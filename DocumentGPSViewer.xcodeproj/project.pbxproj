@@ -54,6 +54,8 @@
 		E46C8D3324E5598A0005398B /* SingleSegmentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSegmentSummaryView.swift; sourceTree = "<group>"; };
 		E46C8D3724E55B830005398B /* SpeedsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedsSummaryView.swift; sourceTree = "<group>"; };
 		E46C8D3924E55C320005398B /* DistanceSegmentsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSegmentsSummaryView.swift; sourceTree = "<group>"; };
+		E47070C824E6ABD300BEBA81 /* SBP_file_protocol.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SBP_file_protocol.md; sourceTree = "<group>"; };
+		E47070C924E6ABF600BEBA81 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIntervalRowView.swift; sourceTree = "<group>"; };
 		E499E19124E05EC0001FFE42 /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
 		E4A4F4C924E00F2C0043C0AF /* DocumentGPSViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentGPSViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,8 @@
 		E4A4F4C024E00F2C0043C0AF = {
 			isa = PBXGroup;
 			children = (
+				E47070C924E6ABF600BEBA81 /* README.md */,
+				E47070C824E6ABD300BEBA81 /* SBP_file_protocol.md */,
 				E4A4F4CB24E00F2C0043C0AF /* DocumentGPSViewer */,
 				E4A4F4DF24E00F300043C0AF /* DocumentGPSViewerTests */,
 				E4A4F4EA24E00F300043C0AF /* DocumentGPSViewerUITests */,
