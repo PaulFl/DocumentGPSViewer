@@ -27,6 +27,7 @@
 		E4A4F50124E015190043C0AF /* TrackMKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50024E015190043C0AF /* TrackMKMapView.swift */; };
 		E4A4F50324E0151E0043C0AF /* TrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50224E0151E0043C0AF /* TrackMapView.swift */; };
 		E4A4F50524E015260043C0AF /* TrackSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50424E015260043C0AF /* TrackSummaryView.swift */; };
+		E4DC6B2A24F5AD2900C919AE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DC6B2924F5AD2900C919AE /* Launch Screen.storyboard */; };
 		E4F3DA5D24E2AF25008E7DC3 /* MainStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */; };
 		E4F3DA5F24E2B00A008E7DC3 /* DetailedStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		E4A4F50024E015190043C0AF /* TrackMKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMKMapView.swift; sourceTree = "<group>"; };
 		E4A4F50224E0151E0043C0AF /* TrackMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMapView.swift; sourceTree = "<group>"; };
 		E4A4F50424E015260043C0AF /* TrackSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSummaryView.swift; sourceTree = "<group>"; };
+		E4DC6B2924F5AD2900C919AE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatsView.swift; sourceTree = "<group>"; };
 		E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedStatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A4F4D224E00F300043C0AF /* Assets.xcassets */,
+				E4DC6B2924F5AD2900C919AE /* Launch Screen.storyboard */,
 				E4A4F4D724E00F300043C0AF /* Info.plist */,
 				E4A4F4F924E00F380043C0AF /* DocumentGPSViewer.entitlements */,
 				E4A4F4CC24E00F2C0043C0AF /* DocumentGPSViewerApp.swift */,
@@ -311,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4DC6B2A24F5AD2900C919AE /* Launch Screen.storyboard in Resources */,
 				E4A4F4D624E00F300043C0AF /* Preview Assets.xcassets in Resources */,
 				E4A4F4D324E00F300043C0AF /* Assets.xcassets in Resources */,
 			);
@@ -513,8 +517,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = FYCX934LN4;
+				DEVELOPMENT_TEAM = VF2ATW79MD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DocumentGPSViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -522,7 +527,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewer;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzz.GPSViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -537,8 +543,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = FYCX934LN4;
+				DEVELOPMENT_TEAM = VF2ATW79MD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DocumentGPSViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -546,7 +553,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewer;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzz.GPSViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
