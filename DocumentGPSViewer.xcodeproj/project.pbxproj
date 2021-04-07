@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		E46C8D3424E5598A0005398B /* SingleSegmentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C8D3324E5598A0005398B /* SingleSegmentSummaryView.swift */; };
 		E46C8D3824E55B830005398B /* SpeedsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C8D3724E55B830005398B /* SpeedsSummaryView.swift */; };
 		E46C8D3A24E55C320005398B /* DistanceSegmentsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C8D3924E55C320005398B /* DistanceSegmentsSummaryView.swift */; };
+		E48D44A6261DF190006C0AD4 /* GradientPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D44A5261DF18F006C0AD4 /* GradientPolyline.swift */; };
 		E499E19024E0570C001FFE42 /* TrackIntervalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */; };
 		E499E19224E05EC0001FFE42 /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499E19124E05EC0001FFE42 /* MiniMapView.swift */; };
 		E4A4F4CD24E00F2C0043C0AF /* DocumentGPSViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4CC24E00F2C0043C0AF /* DocumentGPSViewerApp.swift */; };
@@ -57,6 +58,7 @@
 		E46C8D3924E55C320005398B /* DistanceSegmentsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSegmentsSummaryView.swift; sourceTree = "<group>"; };
 		E47070C824E6ABD300BEBA81 /* SBP_file_protocol.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SBP_file_protocol.md; sourceTree = "<group>"; };
 		E47070C924E6ABF600BEBA81 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E48D44A5261DF18F006C0AD4 /* GradientPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPolyline.swift; sourceTree = "<group>"; };
 		E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIntervalRowView.swift; sourceTree = "<group>"; };
 		E499E19124E05EC0001FFE42 /* MiniMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
 		E4A4F4C924E00F2C0043C0AF /* DocumentGPSViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentGPSViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 				E499E19124E05EC0001FFE42 /* MiniMapView.swift */,
 				E4A4F50024E015190043C0AF /* TrackMKMapView.swift */,
 				E4A4F50224E0151E0043C0AF /* TrackMapView.swift */,
+				E48D44A5261DF18F006C0AD4 /* GradientPolyline.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -290,7 +293,7 @@
 				};
 			};
 			buildConfigurationList = E4A4F4C424E00F2C0043C0AF /* Build configuration list for PBXProject "DocumentGPSViewer" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -351,6 +354,7 @@
 				E4A4F50324E0151E0043C0AF /* TrackMapView.swift in Sources */,
 				E41932A324E2EA5800EDE977 /* SpeedGraphView.swift in Sources */,
 				E46C8D3424E5598A0005398B /* SingleSegmentSummaryView.swift in Sources */,
+				E48D44A6261DF190006C0AD4 /* GradientPolyline.swift in Sources */,
 				E4F3DA5D24E2AF25008E7DC3 /* MainStatsView.swift in Sources */,
 				E4A4F4FD24E0129A0043C0AF /* SBPProcessing.swift in Sources */,
 				E499E19024E0570C001FFE42 /* TrackIntervalRowView.swift in Sources */,
@@ -517,7 +521,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
 				DEVELOPMENT_TEAM = VF2ATW79MD;
 				ENABLE_PREVIEWS = YES;
@@ -527,7 +531,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.buzz.GPSViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -543,7 +547,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
 				DEVELOPMENT_TEAM = VF2ATW79MD;
 				ENABLE_PREVIEWS = YES;
@@ -553,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.buzz.GPSViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

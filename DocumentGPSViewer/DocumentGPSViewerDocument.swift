@@ -16,6 +16,15 @@ extension UTType {
 }
 
 struct DocumentGPSViewerDocument: FileDocument {
+    init(configuration: ReadConfiguration) throws {
+        let data = configuration.file.regularFileContents
+        self.trackData = TrackData(data: data!)
+    }
+    
+    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+        return FileWrapper()
+    }
+    
     let trackData: TrackData?
     static var readableContentTypes: [UTType] { [.data] }
     

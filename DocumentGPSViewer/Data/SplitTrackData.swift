@@ -49,7 +49,8 @@ class SplitTrackData {
         self.maxTackDistance = nil
         self.middlePoint = middlePointLocation(waypoint1: decodedWaypoints.first!, waypoint2: furthestPoint)
         self.mapRegion = trackMapRegion(waypoints: decodedWaypoints)
-        self.trackPolyline = MKPolyline(coordinates: decodedWaypoints.map({$0.coordinate}), count: decodedWaypoints.count)
+        // self.trackPolyline = MKPolyline(coordinates: decodedWaypoints.map({$0.coordinate}), count: decodedWaypoints.count)
+        self.trackPolyline = GradientPolyline(locations: decodedWaypoints, maxSpeed: self.maxSpeed.speedMS)
         self.pointToPointDistance = []
         self.topSegments = (meters50: nil, meters100: nil, meters200: nil, meters500: nil)
         
