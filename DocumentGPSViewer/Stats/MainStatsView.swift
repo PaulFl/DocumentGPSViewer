@@ -10,9 +10,24 @@ import SwiftUI
 struct MainStatsView: View {
     let trackData: SplitTrackData
     let trackIndex: Int
+    let start: String
+    
+    init(trackData: SplitTrackData, trackIndex: Int) {
+        self.trackData = trackData
+        self.trackIndex = trackIndex
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        dateFormatter.timeStyle = .short
+        
+        self.start = dateFormatter.string(from: trackData.decodedWaypoints.first!.timestamp)
+    }
+    
     
     var body: some View {
         VStack(alignment: .leading) {
+            Text(start)
+                .padding(5)
             HStack {
                 Image(systemName: "speedometer")
                     .foregroundColor(.red)

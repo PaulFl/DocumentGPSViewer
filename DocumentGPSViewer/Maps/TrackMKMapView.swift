@@ -49,6 +49,7 @@ struct TrackMKMapView: View {
 struct MapView: UIViewRepresentable {
     let trackData: SplitTrackData
     let mapType: MKMapType
+    let locationManager = CLLocationManager()
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -65,7 +66,6 @@ struct MapView: UIViewRepresentable {
         //view.setRegion(trackData.mapRegion, animated: false)
         view.mapType = mapType
         
-        let locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.requestWhenInUseAuthorization()
