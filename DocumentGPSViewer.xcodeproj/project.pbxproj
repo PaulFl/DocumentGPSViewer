@@ -89,7 +89,6 @@
 		E4A4F4CB24E00F2C0043C0AF /* DocumentGPSViewer */ = {
 			isa = PBXGroup;
 			children = (
-				E4F3048F27B6BA5E00FFF9E4 /* Views */,
 				E4A4F4D224E00F300043C0AF /* Assets.xcassets */,
 				E4A4F4D724E00F300043C0AF /* Info.plist */,
 				E4A4F4F924E00F380043C0AF /* DocumentGPSViewer.entitlements */,
@@ -98,6 +97,7 @@
 				E4A4F4D024E00F2C0043C0AF /* ContentView.swift */,
 				E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */,
 				E4A4F50424E015260043C0AF /* TrackSummaryView.swift */,
+				E4F3048F27B6BA5E00FFF9E4 /* Views */,
 				E4F3DA6024E2DB6D008E7DC3 /* Models */,
 			);
 			path = DocumentGPSViewer;
