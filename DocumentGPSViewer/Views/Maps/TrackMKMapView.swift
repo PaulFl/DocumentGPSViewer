@@ -87,15 +87,15 @@ struct MapView: UIViewRepresentable {
         
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//            let renderer = MKGradientPolylineRenderer(polyline: overlay as! MKPolyline)
-//            //renderer.setColors(trackData.speedColoredWaypoints, locations: trackData.polylineLocations)
-//            renderer.strokeColor = UIColor.systemPurple
-//            renderer.lineCap = .round
-//            renderer.lineWidth = 1.2
-//            return renderer
-            let polyLineRender = GradidentPolylineRenderer(overlay: overlay)
-            polyLineRender.lineWidth = 2.2
-            return polyLineRender
+            let renderer = MKGradientPolylineRenderer(polyline: overlay as! MKPolyline)
+            //renderer.setColors(trackData.speedColoredWaypoints, locations: trackData.polylineLocations)
+            renderer.strokeColor = UIColor.systemPurple
+            renderer.lineCap = .round
+            renderer.lineWidth = 1.2
+            return renderer
+//            let polyLineRender = GradidentPolylineRenderer(overlay: overlay)
+//            polyLineRender.lineWidth = 2.2
+//            return polyLineRender
         }
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

@@ -19,36 +19,15 @@
 		E4A4F4CF24E00F2C0043C0AF /* DocumentGPSViewerDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4CE24E00F2C0043C0AF /* DocumentGPSViewerDocument.swift */; };
 		E4A4F4D124E00F2C0043C0AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4D024E00F2C0043C0AF /* ContentView.swift */; };
 		E4A4F4D324E00F300043C0AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A4F4D224E00F300043C0AF /* Assets.xcassets */; };
-		E4A4F4D624E00F300043C0AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A4F4D524E00F300043C0AF /* Preview Assets.xcassets */; };
-		E4A4F4E124E00F300043C0AF /* DocumentGPSViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4E024E00F300043C0AF /* DocumentGPSViewerTests.swift */; };
-		E4A4F4EC24E00F300043C0AF /* DocumentGPSViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4EB24E00F300043C0AF /* DocumentGPSViewerUITests.swift */; };
 		E4A4F4FB24E012900043C0AF /* TrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4FA24E012900043C0AF /* TrackData.swift */; };
 		E4A4F4FD24E0129A0043C0AF /* SBPProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */; };
 		E4A4F4FF24E0129F0043C0AF /* TrackProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */; };
 		E4A4F50124E015190043C0AF /* TrackMKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50024E015190043C0AF /* TrackMKMapView.swift */; };
 		E4A4F50324E0151E0043C0AF /* TrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50224E0151E0043C0AF /* TrackMapView.swift */; };
 		E4A4F50524E015260043C0AF /* TrackSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F50424E015260043C0AF /* TrackSummaryView.swift */; };
-		E4DC6B2A24F5AD2900C919AE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DC6B2924F5AD2900C919AE /* Launch Screen.storyboard */; };
 		E4F3DA5D24E2AF25008E7DC3 /* MainStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */; };
 		E4F3DA5F24E2B00A008E7DC3 /* DetailedStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E4A4F4DD24E00F300043C0AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4A4F4C124E00F2C0043C0AF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4A4F4C824E00F2C0043C0AF;
-			remoteInfo = DocumentGPSViewer;
-		};
-		E4A4F4E824E00F300043C0AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4A4F4C124E00F2C0043C0AF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4A4F4C824E00F2C0043C0AF;
-			remoteInfo = DocumentGPSViewer;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E41932A224E2EA5800EDE977 /* SpeedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGraphView.swift; sourceTree = "<group>"; };
@@ -66,14 +45,7 @@
 		E4A4F4CE24E00F2C0043C0AF /* DocumentGPSViewerDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentGPSViewerDocument.swift; sourceTree = "<group>"; };
 		E4A4F4D024E00F2C0043C0AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4A4F4D224E00F300043C0AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E4A4F4D524E00F300043C0AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4A4F4D724E00F300043C0AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4A4F4DC24E00F300043C0AF /* DocumentGPSViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocumentGPSViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4A4F4E024E00F300043C0AF /* DocumentGPSViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentGPSViewerTests.swift; sourceTree = "<group>"; };
-		E4A4F4E224E00F300043C0AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4A4F4E724E00F300043C0AF /* DocumentGPSViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocumentGPSViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4A4F4EB24E00F300043C0AF /* DocumentGPSViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentGPSViewerUITests.swift; sourceTree = "<group>"; };
-		E4A4F4ED24E00F300043C0AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4A4F4F924E00F380043C0AF /* DocumentGPSViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DocumentGPSViewer.entitlements; sourceTree = "<group>"; };
 		E4A4F4FA24E012900043C0AF /* TrackData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackData.swift; sourceTree = "<group>"; };
 		E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBPProcessing.swift; sourceTree = "<group>"; };
@@ -81,27 +53,12 @@
 		E4A4F50024E015190043C0AF /* TrackMKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMKMapView.swift; sourceTree = "<group>"; };
 		E4A4F50224E0151E0043C0AF /* TrackMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMapView.swift; sourceTree = "<group>"; };
 		E4A4F50424E015260043C0AF /* TrackSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSummaryView.swift; sourceTree = "<group>"; };
-		E4DC6B2924F5AD2900C919AE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E4F3DA5C24E2AF25008E7DC3 /* MainStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatsView.swift; sourceTree = "<group>"; };
 		E4F3DA5E24E2B00A008E7DC3 /* DetailedStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedStatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E4A4F4C624E00F2C0043C0AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4A4F4D924E00F300043C0AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4A4F4E424E00F300043C0AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -117,8 +74,6 @@
 				E47070C924E6ABF600BEBA81 /* README.md */,
 				E47070C824E6ABD300BEBA81 /* SBP_file_protocol.md */,
 				E4A4F4CB24E00F2C0043C0AF /* DocumentGPSViewer */,
-				E4A4F4DF24E00F300043C0AF /* DocumentGPSViewerTests */,
-				E4A4F4EA24E00F300043C0AF /* DocumentGPSViewerUITests */,
 				E4A4F4CA24E00F2C0043C0AF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				E4A4F4C924E00F2C0043C0AF /* DocumentGPSViewer.app */,
-				E4A4F4DC24E00F300043C0AF /* DocumentGPSViewerTests.xctest */,
-				E4A4F4E724E00F300043C0AF /* DocumentGPSViewerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,8 +89,8 @@
 		E4A4F4CB24E00F2C0043C0AF /* DocumentGPSViewer */ = {
 			isa = PBXGroup;
 			children = (
+				E4F3048F27B6BA5E00FFF9E4 /* Views */,
 				E4A4F4D224E00F300043C0AF /* Assets.xcassets */,
-				E4DC6B2924F5AD2900C919AE /* Launch Screen.storyboard */,
 				E4A4F4D724E00F300043C0AF /* Info.plist */,
 				E4A4F4F924E00F380043C0AF /* DocumentGPSViewer.entitlements */,
 				E4A4F4CC24E00F2C0043C0AF /* DocumentGPSViewerApp.swift */,
@@ -145,41 +98,21 @@
 				E4A4F4D024E00F2C0043C0AF /* ContentView.swift */,
 				E499E18F24E0570C001FFE42 /* TrackIntervalRowView.swift */,
 				E4A4F50424E015260043C0AF /* TrackSummaryView.swift */,
-				E4F3DA6024E2DB6D008E7DC3 /* Data */,
-				E4F3DA6124E2DB86008E7DC3 /* Stats */,
-				E4F3DA6224E2DBAF008E7DC3 /* Maps */,
-				E4A4F4D424E00F300043C0AF /* Preview Content */,
+				E4F3DA6024E2DB6D008E7DC3 /* Models */,
 			);
 			path = DocumentGPSViewer;
 			sourceTree = "<group>";
 		};
-		E4A4F4D424E00F300043C0AF /* Preview Content */ = {
+		E4F3048F27B6BA5E00FFF9E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E4A4F4D524E00F300043C0AF /* Preview Assets.xcassets */,
+				E4F3DA6224E2DBAF008E7DC3 /* Maps */,
+				E4F3DA6124E2DB86008E7DC3 /* Stats */,
 			);
-			path = "Preview Content";
+			path = Views;
 			sourceTree = "<group>";
 		};
-		E4A4F4DF24E00F300043C0AF /* DocumentGPSViewerTests */ = {
-			isa = PBXGroup;
-			children = (
-				E4A4F4E024E00F300043C0AF /* DocumentGPSViewerTests.swift */,
-				E4A4F4E224E00F300043C0AF /* Info.plist */,
-			);
-			path = DocumentGPSViewerTests;
-			sourceTree = "<group>";
-		};
-		E4A4F4EA24E00F300043C0AF /* DocumentGPSViewerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E4A4F4EB24E00F300043C0AF /* DocumentGPSViewerUITests.swift */,
-				E4A4F4ED24E00F300043C0AF /* Info.plist */,
-			);
-			path = DocumentGPSViewerUITests;
-			sourceTree = "<group>";
-		};
-		E4F3DA6024E2DB6D008E7DC3 /* Data */ = {
+		E4F3DA6024E2DB6D008E7DC3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E4A4F4FA24E012900043C0AF /* TrackData.swift */,
@@ -187,7 +120,7 @@
 				E4A4F4FC24E0129A0043C0AF /* SBPProcessing.swift */,
 				E4A4F4FE24E0129F0043C0AF /* TrackProcessing.swift */,
 			);
-			path = Data;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E4F3DA6124E2DB86008E7DC3 /* Stats */ = {
@@ -234,42 +167,6 @@
 			productReference = E4A4F4C924E00F2C0043C0AF /* DocumentGPSViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4A4F4DB24E00F300043C0AF /* DocumentGPSViewerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4A4F4F324E00F300043C0AF /* Build configuration list for PBXNativeTarget "DocumentGPSViewerTests" */;
-			buildPhases = (
-				E4A4F4D824E00F300043C0AF /* Sources */,
-				E4A4F4D924E00F300043C0AF /* Frameworks */,
-				E4A4F4DA24E00F300043C0AF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E4A4F4DE24E00F300043C0AF /* PBXTargetDependency */,
-			);
-			name = DocumentGPSViewerTests;
-			productName = DocumentGPSViewerTests;
-			productReference = E4A4F4DC24E00F300043C0AF /* DocumentGPSViewerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E4A4F4E624E00F300043C0AF /* DocumentGPSViewerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4A4F4F624E00F300043C0AF /* Build configuration list for PBXNativeTarget "DocumentGPSViewerUITests" */;
-			buildPhases = (
-				E4A4F4E324E00F300043C0AF /* Sources */,
-				E4A4F4E424E00F300043C0AF /* Frameworks */,
-				E4A4F4E524E00F300043C0AF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E4A4F4E924E00F300043C0AF /* PBXTargetDependency */,
-			);
-			name = DocumentGPSViewerUITests;
-			productName = DocumentGPSViewerUITests;
-			productReference = E4A4F4E724E00F300043C0AF /* DocumentGPSViewerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -281,14 +178,6 @@
 				TargetAttributes = {
 					E4A4F4C824E00F2C0043C0AF = {
 						CreatedOnToolsVersion = 12.0;
-					};
-					E4A4F4DB24E00F300043C0AF = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = E4A4F4C824E00F2C0043C0AF;
-					};
-					E4A4F4E624E00F300043C0AF = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = E4A4F4C824E00F2C0043C0AF;
 					};
 				};
 			};
@@ -306,8 +195,6 @@
 			projectRoot = "";
 			targets = (
 				E4A4F4C824E00F2C0043C0AF /* DocumentGPSViewer */,
-				E4A4F4DB24E00F300043C0AF /* DocumentGPSViewerTests */,
-				E4A4F4E624E00F300043C0AF /* DocumentGPSViewerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -317,23 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4DC6B2A24F5AD2900C919AE /* Launch Screen.storyboard in Resources */,
-				E4A4F4D624E00F300043C0AF /* Preview Assets.xcassets in Resources */,
 				E4A4F4D324E00F300043C0AF /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4A4F4DA24E00F300043C0AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4A4F4E524E00F300043C0AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,36 +237,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4A4F4D824E00F300043C0AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4A4F4E124E00F300043C0AF /* DocumentGPSViewerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4A4F4E324E00F300043C0AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4A4F4EC24E00F300043C0AF /* DocumentGPSViewerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E4A4F4DE24E00F300043C0AF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4A4F4C824E00F2C0043C0AF /* DocumentGPSViewer */;
-			targetProxy = E4A4F4DD24E00F300043C0AF /* PBXContainerItemProxy */;
-		};
-		E4A4F4E924E00F300043C0AF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4A4F4C824E00F2C0043C0AF /* DocumentGPSViewer */;
-			targetProxy = E4A4F4E824E00F300043C0AF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E4A4F4EE24E00F300043C0AF /* Debug */ = {
@@ -522,7 +364,7 @@
 				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = VF2ATW79MD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DocumentGPSViewer/Info.plist;
@@ -548,7 +390,7 @@
 				CODE_SIGN_ENTITLEMENTS = DocumentGPSViewer/DocumentGPSViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DocumentGPSViewer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = VF2ATW79MD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DocumentGPSViewer/Info.plist;
@@ -563,90 +405,6 @@
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		E4A4F4F424E00F300043C0AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYCX934LN4;
-				INFOPLIST_FILE = DocumentGPSViewerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocumentGPSViewer.app/DocumentGPSViewer";
-			};
-			name = Debug;
-		};
-		E4A4F4F524E00F300043C0AF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYCX934LN4;
-				INFOPLIST_FILE = DocumentGPSViewerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocumentGPSViewer.app/DocumentGPSViewer";
-			};
-			name = Release;
-		};
-		E4A4F4F724E00F300043C0AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYCX934LN4;
-				INFOPLIST_FILE = DocumentGPSViewerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DocumentGPSViewer;
-			};
-			name = Debug;
-		};
-		E4A4F4F824E00F300043C0AF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FYCX934LN4;
-				INFOPLIST_FILE = DocumentGPSViewerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = paulfly.DocumentGPSViewerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DocumentGPSViewer;
 			};
 			name = Release;
 		};
@@ -667,24 +425,6 @@
 			buildConfigurations = (
 				E4A4F4F124E00F300043C0AF /* Debug */,
 				E4A4F4F224E00F300043C0AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4A4F4F324E00F300043C0AF /* Build configuration list for PBXNativeTarget "DocumentGPSViewerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4A4F4F424E00F300043C0AF /* Debug */,
-				E4A4F4F524E00F300043C0AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4A4F4F624E00F300043C0AF /* Build configuration list for PBXNativeTarget "DocumentGPSViewerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4A4F4F724E00F300043C0AF /* Debug */,
-				E4A4F4F824E00F300043C0AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
